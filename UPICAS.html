@@ -59,22 +59,21 @@
     .project-logos {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 2rem;
       margin-bottom: 2rem;
     }
 
-    .logo-background {
-      background: white;
-      padding: 0.5rem 1rem; /* Abstand um die Logos */
+    .logos-background {
+      background: rgba(255,255,255,0.8); /* 80% Deckkraft */
+      padding: 0.5rem 1.5rem;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* optionaler Schatten */
+      gap: 2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .logo-background img {
+    .logos-background img {
       max-height: 80px;
       object-fit: contain;
     }
@@ -119,7 +118,7 @@
       header {
         padding: 3rem 1rem;
       }
-      .logo-background img {
+      .logos-background img {
         max-height: 60px;
       }
     }
@@ -141,10 +140,8 @@
   <header>
     <div class="header-content">
       <div class="project-logos">
-        <div class="logo-background">
+        <div class="logos-background">
           <img src="img/UPICAS_LOGO_box.png" alt="UPICAS Project Logo" />
-        </div>
-        <div class="logo-background">
           <img src="img/FNR_LOGO_BIG.png" alt="Funder Logo" />
         </div>
       </div>
