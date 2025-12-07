@@ -32,12 +32,28 @@
       text-decoration: underline;
     }
 
-    /* HEADER */
+    /* HEADER WITH BACKGROUND */
     header {
       text-align: center;
-      padding: 2rem;
-      background: #ffffff;
+      padding: 4rem 2rem;
+      background: url('img/header-background.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      position: relative;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4); /* overlay for readability */
+      z-index: 0;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
     }
 
     .profile-photo {
@@ -46,7 +62,7 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 4px solid #2d3e50;
+      border: 4px solid white;
     }
 
     /* CONTENT */
@@ -81,12 +97,23 @@
     .social-links a:hover {
       text-decoration: underline;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+      header {
+        padding: 3rem 1rem;
+      }
+      .profile-photo {
+        width: 120px;
+        height: 120px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- 🔹 NAVIGATION -->
+  <!-- NAVIGATION -->
   <nav>
     <a href="index.html">Home</a>
     <a href="publications.html">Publications</a>
@@ -95,13 +122,16 @@
     <a href="mailto:ziwen.teuber@uni.lu">Contact</a>
   </nav>
 
-  <!-- 🔹 HEADER WITH PHOTO -->
+  <!-- HEADER WITH BACKGROUND -->
   <header>
-    <img src="img/IMG_4996.jpg" alt="Ziwen Teuber" class="profile-photo" />
-    <h1>Ziwen Teuber</h1>
-    <p>Senior Researcher | Applied Developmental & Educational Psychology</p>
+    <div class="header-content">
+      <img src="img/IMG_4996.jpg" alt="Ziwen Teuber" class="profile-photo" />
+      <h1>Ziwen Teuber</h1>
+      <p>Senior Researcher | Applied Developmental & Educational Psychology</p>
+    </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <div class="container">
 
     <section>
@@ -131,7 +161,6 @@
         I am currently co-editing the "Handbook of Educational Psychology" with Nadine Spörer (University of Potsdam) 
         and Samuel Greiff (Technical University of Munich), to be published by Springer. 
         The handbook is scheduled for release in autumn 2027.
-
       </p>
     </section>
 
