@@ -5,124 +5,186 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UPICAS | Ziwen Teuber</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f5f7fa;
-      color: #222;
-      line-height: 1.6;
-    }
+  <<style>
+  /* GENERAL STYLES */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
 
-    /* NAVIGATION */
+  /* NAVIGATION */
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #2d3e50;
+    padding: 1rem;
+    gap: 2rem;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* HEADER WITH BACKGROUND */
+  header {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: url('img/header-background_2.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+  }
+
+  .header-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .project-logos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+
+  .logos-background {
+    background: rgba(255,255,255,0.6);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    flex-wrap: wrap;
+  }
+
+  .logos-background img {
+    max-height: 80px;
+    object-fit: contain;
+  }
+
+  .first-letter {
+    text-decoration: underline;
+  }
+
+  /* CONTENT */
+  .container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem 1rem;
+  }
+
+  section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+    word-wrap: break-word; /* prevents long links from overflowing */
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #2d3e50;
+    color: white;
+    margin-top: 2rem;
+  }
+
+  /* RESPONSIVE ADJUSTMENTS */
+  @media (max-width: 900px) {
+    section {
+      padding: 1.5rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 600px) {
     nav {
-      display: flex;
-      justify-content: center;
-      background: #2d3e50;
-      padding: 1rem;
-      gap: 2rem;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0.5rem;
     }
+
     nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      font-size: 1rem;
     }
 
-    /* HEADER WITH BACKGROUND */
     header {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: url('img/header-background_2.jpg') no-repeat center center;
-      background-size: cover;
-      color: white;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.4); /* Overlay für Lesbarkeit */
-      z-index: 0;
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .project-logos {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 2rem;
-    }
-
-    .logos-background {
-      background: rgba(255,255,255,0.6); /* 80% Deckkraft */
-      padding: 0.5rem 1.5rem;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      padding: 3rem 1rem;
     }
 
     .logos-background img {
-      max-height: 80px;
-      object-fit: contain;
-    }
-
-    .first-letter {
-      text-decoration: underline;
-    }
-
-    /* CONTENT */
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
+      max-height: 60px;
     }
 
     section {
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 1rem;
     }
 
     h2 {
-      margin-top: 0;
+      font-size: 1.2rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
+    body {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    header {
+      padding: 2.5rem 1rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #2d3e50;
-      color: white;
-      margin-top: 2rem;
+    .logos-background img {
+      max-height: 50px;
     }
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      header {
-        padding: 3rem 1rem;
-      }
-      .logos-background img {
-        max-height: 60px;
-      }
+    h2 {
+      font-size: 1.1rem;
     }
-  </style>
+
+    body {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
 </head>
 
 <body>
